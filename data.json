@@ -1,0 +1,29 @@
+// JSON Document
+
+{
+	"players":{
+		"asensio":{
+			"name": "Asensio",
+			"score": "5",
+			"position": "Midfielder",
+			"team": {
+			"realmadrid": true
+	}
+	},
+		"messi":{
+			"name": "Messi",
+			"score": "6",
+			"position": "Defense",
+			"team": {
+			"realmadrid": true
+	}
+		},
+	
+	"teams":{
+		"realmadrid":{
+			"name": "Real Madrid",
+			"stadium": "Bernabeu"
+		}
+	}
+}
+}

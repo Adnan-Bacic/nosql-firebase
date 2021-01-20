@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<link href="data.json">
+</head>
+
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBMf4DsOBFiJxrlDN1Bl2Eifdc7T_w3n00",
+    authDomain: "nosql-firebase-test.firebaseapp.com",
+    databaseURL: "https://nosql-firebase-test.firebaseio.com",
+    projectId: "nosql-firebase-test",
+    storageBucket: "nosql-firebase-test.appspot.com",
+    messagingSenderId: "936215045219"
+  };
+  firebase.initializeApp(config);
+
+	
+	var database = firebase.database();
+	/*
+	database.ref('/players/asensio/position').on('value', function(snapshot){
+		console.log(snapshot.val());
+		document.getElementById("result").innerHTML = snapshot.val();
+	}
+	)
+	*/
+	
+	database.ref('/players/asensio/score').on('value', function(snapshot){
+		console.log(snapshot.val());
+		document.getElementById("asensio-score").innerHTML = snapshot.val();
+	});
+									
+											  
+	database.ref('/players/messi/score').on('value', function(snapshot){
+		console.log(snapshot.val());
+		document.getElementById("messi-score").innerHTML = snapshot.val();
+	});
+	
+</script>
+<!--	<div id="result"></div>
+-->	
+	<h2>Asensio vs Messi</h2>
+	<p>Total goals by Asensio: <span id="asensio-score"></span></p>
+	<br>
+	<p>Total goals by Messi: <span id="messi-score"></span></p>
+	
+	<hr>
+	<form>
+  <fieldset>
+    <legend>Add new player</legend>
+    Name: <input type="text" size="30"><br>
+    Score: <input type="text" size="30"><br>
+	<button type="submit">Add player</button>
+  </fieldset>
+</form>
+	
+</body>
+</html>
